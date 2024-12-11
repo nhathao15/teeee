@@ -1,0 +1,69 @@
+# find all elements with the text-content "Click Me"
+* def elements = locateAll('{}Click Me')
+* match karate.sizeOf(elements) == 7
+* elements[6].click()
+* match elements[3].script('_.tagName') == 'BUTTON'
+
+Daily Reports :
+[2024-12-06] Friday:
+training session meeting
+Read Documents and to do API TCs,
+In-progress 
+---------------------------------------------------------------------------------------
+Notes :
+None.
+---------------------------------------------------------------------------------------
+Next Day Plan :
+to do API TCs, Desktop App
+pto ngày nghỉ
+6/12 1/2ngay
+3/2
+tet
+
+
+check picture
+desktop app
+quy trinh dung robot
+cai accessibi
+che do man hinh 100 (display)
+dung compare voi hih
+baseline capp theo locate
+bat ceckbox thi bat locate.screeshot bat capture
+
+
+PTO duoc approve nó se sync qua timesheet
+10:41
+va  e submit 4 tiếng nữa
+
+React
+
+Reply
+
+10:41
+e hỏi Man huong dẩn cho e
+10:43
+Timesheet cần hoàn thành truoc 9 gio sáng thứ 6 hàng tuần, và ngày cuối của tháng
+10:43
+các ngày khác các ban có thể làm trễ hơn, riêng chú ý 2 mốc này th
+
+
+pass sql 123456
+
+
+Thay vì nối chuỗi ra ngoài feature nó ko đẹp:
+* def cartButton = "//a[@data-product_name='" + productName + "']"
+Thì mình có thể add nó vô file locator chung luôn:
+`file locator:shoppage.json`
+{ "cartButton": "//a[@data-product_name='%s']" }
+Xong mình dùng hàm format có sẵn trong string-helper.js:
+* def cartButton = format(shoppage.cartButton, productName)
+đối với Web UI khi muốn screenshot 1 control mình sẽ dùng như sau:
+* def current = screenshot(locator, false)
+còn đối với Robot Desktop UI khi screenshot 1 control mình sẽ dùng:
+* def current = locate(locator).screenshot()
+
+
+
+
+
+
